@@ -42,7 +42,7 @@ ini_set('display_errors', 'off'); // теперь сообщений НЕ буд
                 <?php while( $res = mysqli_fetch_assoc($books)){
                     echo '
                      <!-- one product -->
-                    <div  class="oneBook js_selectBook" data-id="'.$res['id_book'].'">
+                    <div  class="oneBook js_selectBook " data-id="'.$res['id_book'].'">
                         <div class="td id">
                             Название
                             <span class="result_avtor js_name">'.$res['name'].'</span>

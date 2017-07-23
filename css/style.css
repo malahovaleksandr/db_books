@@ -74,6 +74,11 @@ body,html{
     padding: 10px;
     margin-bottom: 30px;
 }
+.resultFilter .description{
+    position: absolute;
+    left: -1000%;
+    opacity: 0;
+}
 .decorationnone{
     text-decoration: none;
 }
