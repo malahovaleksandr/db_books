@@ -2,7 +2,7 @@
 require_once 'config.php';
 
 
-$mysqli    = new mysqli(DB_LOCAL,DB_LOGIN,DB_PASS,DB_NAME);
+$mysqli = new mysqli(DB_LOCAL,DB_LOGIN,DB_PASS,DB_NAME);
 $mysqli->set_charset("utf8");
 
 $query_author = 'SELECT author FROM authors';
@@ -11,17 +11,10 @@ $query_books  = 'SELECT * FROM books AS t1 LEFT JOIN author_books AS t2 ON t1.id
 
 $authors = $mysqli->query($query_author);
 $genres  = $mysqli->query($query_genres);
-$books = $mysqli->query($query_books);
-
-//$query_books  = 'SELECT * FROM books AS t1 LEFT JOIN author_books AS t2 ON t1.id = t2.id_book LEFT JOIN genre_books AS t3 ON t1.id = t3.id_book WHERE t2.author="Вульф"' ;
-//$books = $mysqli->prepare($query_books);
-//$books = $mysqli->bind_param("s", 'Гоголь');
-//$books = $mysqli->execute();
-
+$books   = $mysqli->query($query_books);
 
 // return list all books
 if ( $_POST['request'] == 'all_books'){
-
     $books_author = $mysqli->query($query_books);
     $result       = array();
     $i = 0;
@@ -34,7 +27,6 @@ if ( $_POST['request'] == 'all_books'){
 }
 
 function selectByTag($query){
-    $dataInf = $_POST['filter'];
     $mysqli    = new mysqli(DB_LOCAL,DB_LOGIN,DB_PASS,DB_NAME);
     $mysqli->set_charset("utf8");
     $query_author_books  = $query ;
@@ -62,7 +54,6 @@ if ( $_POST['request'] == 'filter_genre'){
 
     selectByTag($query);
 }
-
 
 
 ?>

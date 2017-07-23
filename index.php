@@ -21,14 +21,14 @@ ini_set('display_errors', 'off'); // теперь сообщений НЕ буд
             <div class="blockSearch">
                 <div class="buttonShowAll button js_allBooks">Показать все книги</div>
                 <select class="selectAvtor js_selectAuthor">
-
+                    <option disabled selected>Авторы</option>
                     <?php
                         while( $res = mysqli_fetch_assoc($authors) ){
                        echo '<option>'.$res['author'].'</option>';
                      } ?>
                 </select>
                 <select class="selectGenre js_selectGenre">
-
+                    <option disabled selected>Жанры</option>
                     <?php
                         while( $res = mysqli_fetch_assoc($genres)){
                             echo '<option>'.$res['genre'].'</option>';
@@ -63,11 +63,7 @@ ini_set('display_errors', 'off'); // теперь сообщений НЕ буд
                     </div>
                      <!-- end one product -->
                 ';
-
-
                 }?>
-
-
 
             </div>
             <div class="selectBooks">
@@ -75,23 +71,19 @@ ini_set('display_errors', 'off'); // теперь сообщений НЕ буд
                 <div  class="oneBook js_selectedBook" data-id="1">
                     <div class="td id">
                         Название
-                        <span class="result_avtor js_selectedBook_name">война и мир</span>
+                        <span class="result_avtor js_selectedBook_name"></span>
                     </div>
                     <div class="td avtor">
                         Автор
-                        <span class="result_avtor js_selectedBook_author">Гоголь В.Т.</span>
+                        <span class="result_avtor js_selectedBook_author"></span>
                     </div>
                     <div class="td genre">
                         Жанр
-                        <span class="result_avtor js_selectedBook_genre"> Криминал</span>
+                        <span class="result_avtor js_selectedBook_genre"> </span>
                     </div>
                     <div class="td description">Описание <br>
                         <span class="result_avtor js_selectedBook_description">
-                            Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Corporis dolore doloribus
-                            eveniet explicabo fugit, incidunt magni molestiae
-                            vitae. A eum id illo iure natus, quaerat quibusdam
-                            veniam. Nostrum optio, velit.
+
                         </span>
                     </div>
                 </div>
@@ -103,13 +95,9 @@ ini_set('display_errors', 'off'); // теперь сообщений НЕ буд
                         <input type="number" placeholder="кол-во" class="input js_count">
                         <button type="submit" class="js_buttonOrder">заказaть</button>
                     </form>
-
-
                 </div>
             </div>
-
         </div>
-
     </div>
 
 
