@@ -1,8 +1,6 @@
 <?php
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-require_once "PHPMailer/PHPMailerAutoload.php";
+
+require_once "./PHPMailer/PHPMailerAutoload.php";
 
 function sandMail($Subject,$text,$email){
     $mail = new PHPMailer;
@@ -15,7 +13,7 @@ function sandMail($Subject,$text,$email){
     $mail->Port = 465;                                    // TCP port to connect to
     $mail->CharSet = 'UTF-8';
 
-    $mail->setFrom('leather2m@gmail.com', 'books store');
+    $mail->setFrom($email, 'books store');
     $mail->addAddress($email, 'order book');     // Add a recipient
     $mail->isHTML(true);                                  // Set email format to HTML
 
@@ -30,13 +28,14 @@ function sandMail($Subject,$text,$email){
         echo 'Письмо отправленно';
     }
 }
-$nameClient      = $_POST['nameClient'];
-$name_book = $_POST['$name_book'];
-$address   = $_POST['address'];
-$count     = $_POST['count'];
-$email     = $_POST['email'];
-$Subject   = 'Заказ книги';
+$nameClient = $_POST['nameClient'];
+$name_book  = $_POST['name_book'];
+$address    = $_POST['address'];
+$count      = $_POST['count'];
+$email      = $_POST['email'];
+$Subject    = 'Заказ книги';
 
-$text= 'Имя клиента- '.$nameClient.';  Адрес клиента: '.$address.'Название книги- '.$name_book.' ; кол-во книг '.$count;
+$text = 'Имя клиента- '.$nameClient.';  Адрес клиента: '.$address.'Название книги- '.$name_book.' ; кол-во книг '.$count;
 
 sandMail($Subject,$text,$email);
+

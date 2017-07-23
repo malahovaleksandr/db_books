@@ -88,11 +88,11 @@ ini_set('display_errors', 'off'); // теперь сообщений НЕ буд
                     </div>
                 </div>
                 <div class="formOrder">
-                    <form action="php/order.php" >
-                        <input type="text" placeholder="ФИО" class="input js_name">
-                        <input type="number" placeholder="E-mail" class="input js_mail">
-                        <input type="text" placeholder="Адрес" class="input js_address">
-                        <input type="number" placeholder="кол-во" class="input js_count">
+                    <form >
+                        <input  type="text"   placeholder="ФИО"    class="input js_nameClient">
+                        <input  type="email"  placeholder="E-mail" class="input js_mail">
+                        <input  type="text"   placeholder="Адрес"  class="input js_address">
+                        <input  type="number" placeholder="кол-во" class="input js_count">
                         <button type="submit" class="js_buttonOrder">заказaть</button>
                     </form>
                 </div>

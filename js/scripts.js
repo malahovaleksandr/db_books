@@ -1,5 +1,5 @@
 $(function(){
-    console.log('js connect');
+
     var js_allBooks   = $('.js_allBooks'),
         wrapperResult = $('.resultFilter');//block where show result
 
@@ -111,32 +111,35 @@ $(function(){
 
     //sand mail-----------------------------------------------------------------
     var sandMail   = $('.js_buttonOrder'),//button sand mail
-        nameClient = $('.js_name'),//name client`s
+        nameClient = $('.js_nameClient'),//name client`s
         mailClient = $('.js_mail'),//mail client
         address    = $('.js_address'),//address
         name_book  = $('.js_selectedBook').data('id'),//id selected book
         count      = $('.js_count');//count books order
 //function clear inputs form
     function clearInputForm(){
-        nameClient.val('');
-        address.val('');
-        count.val('');
+        nameClient.val(' ');
+        address.val(' ');
+        count.val(' ');
+        mailClient.val(' ');
     }
 
     sandMail.on('click',function(e){
+
         e.preventDefault();
         $.ajax({
             type: "POST",
-            url: "../php/sandMail.php",
+            url: "../php/sand_mail.php",
             data: {
                 nameClient : nameClient.val(),
                 address    : address.val(),
                 name_book  :  name_book,
                 count      : count.val(),
-                email      :  mailClient
+                email      :  mailClient.val()
             },
-            success: function(){
+            success: function(msg){
                 clearInputForm();
+                console.log(msg);
             }
         });
     });
