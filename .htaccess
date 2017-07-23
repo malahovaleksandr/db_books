@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "Private zone. Only for administrator!"
+require valid-user
+AuthUserFile  	E:/OpenServer5.2.6/OpenServer/domains/booksgallery.loc/.htpasswd
+<Files .htpasswd>
+   deny from all
+</Files>
