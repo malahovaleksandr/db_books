@@ -112,7 +112,6 @@ $(function(){
     //sand mail-----------------------------------------------------------------
     var sandMail   = $('.js_buttonOrder'),//button sand mail
         nameClient = $('.js_nameClient'),//name client`s
-        mailClient = $('.js_mail'),//mail client
         address    = $('.js_address'),//address
         name_book  = $('.js_selectedBook').data('id'),//id selected book
         count      = $('.js_count');//count books order
@@ -121,7 +120,7 @@ $(function(){
         nameClient.val(' ');
         address.val(' ');
         count.val(' ');
-        mailClient.val(' ');
+
     }
 
     sandMail.on('click',function(e){
@@ -134,8 +133,8 @@ $(function(){
                 nameClient : nameClient.val(),
                 address    : address.val(),
                 name_book  :  name_book,
-                count      : count.val(),
-                email      :  mailClient.val()
+                count      : count.val()
+
             },
             success: function(msg){
                 clearInputForm();

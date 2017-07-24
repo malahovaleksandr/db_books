@@ -7,4 +7,6 @@ define('DB_NAME','books');
 define ('DB_LOGIN','root');
 define ('DB_PASS','');
 
+define ('MAIL_ADMIN','pro100boy@gmail.com');
+
 ?>
