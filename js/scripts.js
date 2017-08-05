@@ -40,12 +40,17 @@ $(function(){
             AuthorBook      = thisBlock.find('.js_author').text(),
             GenreBook       = thisBlock.find('.js_genre').text();
 
-
         selectedBook.data('id',idBook);
         insertNameBook.text(NameBook);
         insertDescriptionBook.text(DescriptionBook);
         insertAuthorBook.text(AuthorBook);
         insertGenreBook.text(GenreBook);
+    }
+
+    //function valid mail
+    function isValidEmailAddress(emailAddress) {
+        var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+        return pattern.test(emailAddress);
     }
     //button filter - show all books
     js_allBooks.on('click',function(){
@@ -124,8 +129,10 @@ $(function(){
     }
 
     sandMail.on('click',function(e){
-
         e.preventDefault();
+
+
+
         $.ajax({
             type: "POST",
             url: "../php/sand_mail.php",

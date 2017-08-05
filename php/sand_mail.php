@@ -1,5 +1,6 @@
 <?php
 require_once "config.php";
+require_once 'functions.php';
 //require_once "./PHPMailer/PHPMailerAutoload.php";
 //
 //function sandMail($Subject,$text,$email){
@@ -31,10 +32,10 @@ require_once "config.php";
 
 
 
-$nameClient = $_POST['nameClient'];
-$name_book  = $_POST['name_book'];
-$address    = $_POST['address'];
-$count      = $_POST['count'];
+$nameClient = deleteTags($_POST['nameClient']);
+$name_book  = deleteTags($_POST['name_book']);
+$address    = deleteTags($_POST['address']);
+$count      = (int)deleteTags($_POST['count']); //only for version php7
 $subject    = 'Заказ книги';
 
 //$text = 'Имя клиента- '.$nameClient.';  Адрес клиента: '.$address.'Название книги- '.$name_book.' ; кол-во книг '.$count;
